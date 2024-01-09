@@ -4,6 +4,7 @@ export const iceCreamSlice = createSlice({
   name: "iceCream",
   initialState: {
     value: 0,
+    flavor: "Rocky Road",
   },
   reducers: {
     increment: (state) => {
@@ -21,6 +22,9 @@ export const iceCreamSlice = createSlice({
     resetIceCream: (state) => {
       state.value = 0;
     },
+    changeFlavor: (state, action) => {
+      state.flavor = action.payload;
+    },
   },
 });
 
@@ -30,6 +34,7 @@ export const {
   incrementByAmount,
   decrementByAmount,
   resetIceCream,
+  changeFlavor,
 } = iceCreamSlice.actions;
 
 export default iceCreamSlice.reducer;

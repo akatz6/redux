@@ -5,12 +5,15 @@ import {
   increment,
   incrementByAmount,
   decrementByAmount,
+  changeFlavor,
 } from "./iceCreamSlice";
 
 export function IceCream() {
   const count = useSelector((state) => state.iceCream.value);
+
   const dispatch = useDispatch();
   const [amount, setAmount] = useState("2");
+  const [flavorish, setFlavor] = useState("");
 
   return (
     <div>
@@ -42,6 +45,15 @@ export function IceCream() {
           onClick={() => dispatch(decrementByAmount(Number(amount) || 0))}
         >
           Decrease Amount
+        </button>
+      </div>
+      <div>
+      <input value={flavorish} onChange={(e) => setFlavor(e.target.value)} />
+      <button
+          className="btn btn-primary"
+          onClick={() => dispatch(changeFlavor(flavorish))}
+        >
+          Update Flavor
         </button>
       </div>
     </div>

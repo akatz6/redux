@@ -4,9 +4,11 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import { resetPie } from "./feature/pies/piesSlice";
 import { resetIceCream } from "./feature/iceCream/iceCreamSlice";
+import { useSelector } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
+  const flavor = useSelector((state) => state.iceCream.flavor);
   return (
     <div>
       <div className="App">
@@ -27,6 +29,7 @@ function App() {
         >
           Reset
         </button>
+        <h3>{flavor}</h3>
         <IceCream />
       </div>
     </div>
