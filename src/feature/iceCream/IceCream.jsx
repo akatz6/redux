@@ -13,7 +13,7 @@ export function IceCream() {
 
   const dispatch = useDispatch();
   const [amount, setAmount] = useState("2");
-  const [flavorish, setFlavor] = useState("");
+  const [flavor, setFlavor] = useState("");
 
   return (
     <div>
@@ -48,10 +48,10 @@ export function IceCream() {
         </button>
       </div>
       <div>
-      <input value={flavorish} onChange={(e) => setFlavor(e.target.value)} />
+      <input value={flavor} onChange={(e) => setFlavor(e.target.value)} />
       <button
           className="btn btn-primary"
-          onClick={() => dispatch(changeFlavor(flavorish))}
+          onClick={() => dispatch(changeFlavor(flavor))}
         >
           Update Flavor
         </button>
